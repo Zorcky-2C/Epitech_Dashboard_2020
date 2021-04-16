@@ -1,0 +1,33 @@
+﻿@model ProfileViewModel
+
+@using Dashboard.Services.Intranet
+
+@{Notifications widget = new Notifications(Model.IntranetAutologin);}
+
+<div class="table-responsive">
+    <table class="table align-items-center">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">date</th>
+                <th scope="col">message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < widget.getNotifications().Count; i++)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="media-body">
+                            <span class="mb-0 text-sm">@widget.getNotifications()[i].Date</span>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media-body">
+                            <span class="mb-0 text-sm">@Html.Raw(widget.getNotifications()[i].Title.Replace("/auth", "http://intra.epitech.eu/auth"))</span>
+                        </div>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

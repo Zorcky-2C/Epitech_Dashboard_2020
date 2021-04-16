@@ -1,0 +1,13 @@
+﻿@model ProfileViewModel
+
+@using Dashboard.Services.Intranet
+
+@{Notes widget = new Notes(Model.IntranetAutologin);}
+
+<div class="card-body">
+    <span class="h3 font-weight-bold mb-0">Credits: </span>
+    <span class="h2 font-weight-bold mb-0">@widget.getNotes().Credits</span>
+    <br>
+    <span class="h3 font-weight-bold mb-0">GPA: </span>
+    <span class="h2 font-weight-bold mb-0">@widget.getNotes().Gpa[0].Gpa</span>
+</div>

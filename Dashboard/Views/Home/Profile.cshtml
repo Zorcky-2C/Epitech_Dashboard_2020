@@ -1,0 +1,176 @@
+﻿@model ProfileViewModel
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    Layout = "_LayoutProfile";
+    ViewData["Title"] = "Profile";
+}
+
+<script>
+    function DeleteService(service_name) {
+        $.get("/Dashboard/DeleteService", { servicename: service_name }).done(function (data) {
+            location.reload();
+        });
+    }
+
+    function AddAutologin() {
+        var auto_login = $("#autologin").val();
+        if (auto_login != "") {
+            $.get("/Dashboard/SaveIntranetAutologin", { autologin: auto_login }).done(function (data) {
+                location.reload();
+            });
+        }
+    }
+</script>
+
+<div class="row">
+    <div class="col-xl order-xl-1">
+        <div class="card">
+            <form asp-controller="Home" asp-action="Profile" method="POST">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <h3 class="mb-0">Profile </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Services -->
+                    <h6 class="heading-small text-muted mb-4">SUBSCRIBED SERVICES</h6>
+                    @foreach (var service in Dashboard.Startup.Services)
+                    {
+                        if (Startup.UserContainsService(service.Name, Model.Services))
+                        {
+                            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                                <span class="alert-inner--text">@service.Name</span>
+                                <button onclick="DeleteService('@service.Name')" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                    }
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#modal-default">Add service</button>
+                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                            <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h6 class="modal-title" id="modal-title-default">Please choose a service</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        @foreach (var service in Startup.Services)
+                                        {
+                                            if (!Startup.UserContainsService(service.Name, Model.Services))
+                                            {
+                                                if (service.Name == "Epitech Intranet")
+                                                {
+                                                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#intranetmodal">@service.Name</button>
+                                                }
+                                                else
+                                                {
+                                                    @(Html.ActionLink(service.Name, "AddService", "Dashboard", routeValues: new { servicename = @service.Name }, new { @class = "btn btn-primary btn-lg btn-block" }))
+                                                }
+                                            }
+                                        }
+
+                                        <div class="modal fade" id="intranetmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Please provide your Intranet Autologin</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-12 text-center">
+                                                            <input name="autologin" id="autologin" type="text" class="form-control" placeholder="325d0b1245this_is_an_example32726e9ef0e5">
+                                                            <br />
+                                                            <a target="_blank" href="https://intra.epitech.eu/admin/autolog?format=json" class="btn bg-primary btn-primary">Get my Intranet Autologin token</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button onclick="AddAutologin()" type="button" class="btn btn-primary">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <!-- Profile info -->
+                    <h6 class="heading-small text-muted mb-4">PROFILE INFORMATION</h6>
+                    <div class="pl-lg-4">
+                        @* Update was ok *@
+                        @if (!string.IsNullOrWhiteSpace(TempData["StatusMessage"] as string))
+                        {<!-- everything went ok -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div role="alert" class="alert alert-success alert-dismissible fade show">
+                                        @TempData["StatusMessage"]
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> } @* Update has errors *@
+                        @if (!ViewData.ModelState.IsValid && ViewData.ModelState[string.Empty] != null)
+                        {<!-- errors -->
+                            @foreach (var error in @ViewData.ModelState[string.Empty]?.Errors)
+                            {
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div role="alert" class="alert alert-warning alert-dismissible fade show">
+                                            <span>@error.ErrorMessage</span>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>}}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Username</label>
+                                    <input asp-for="FullName" type="text" id="input-first-name" class="form-control" placeholder="First name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-email">Email address</label>
+                                    <input asp-for="Email" type="email" id="input-email" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Description -->
+                </div>
+                <div class="card-footer">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-md btn-primary">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

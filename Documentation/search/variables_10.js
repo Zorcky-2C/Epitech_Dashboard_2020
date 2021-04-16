@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['schoolcode_750',['SchoolCode',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a41e023e47124f593a1e24de493ed83c7',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['schoolid_751',['SchoolId',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a0ea4f465e06f5f9f7d197edaf3d76ad2',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['schooltitle_752',['SchoolTitle',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a3892f3487fa5dd94a86294e1071c1acd',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['scolaryear_753',['Scolaryear',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#ac5d12ce8134260ecd7bb840dedfcb088',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['semester_754',['Semester',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a37e427e213a3af8fd2bff995c791f255',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['semestercode_755',['SemesterCode',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a75d68418d388191a1f883d9bae382528',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['services_756',['Services',['../class_dashboard_1_1_startup.html#a83d0c6891fa3d71af7de12ea98b9fdd2',1,'Dashboard::Startup']]],
+  ['set_757',['set',['../_login_8cshtml_8cs.html#a112a711f766db446c2f517b794a1c04a',1,'set():&#160;Login.cshtml.cs'],['../_register_8cshtml_8cs.html#a112a711f766db446c2f517b794a1c04a',1,'set():&#160;Register.cshtml.cs']]],
+  ['shell_758',['Shell',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#af71b97245454915daacd518278c46b76',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['showrequestid_759',['ShowRequestId',['../class_dashboard_1_1_models_1_1_error_view_model.html#a5a87b2cb4e3c9c1a87b3bb559c081a35',1,'Dashboard::Models::ErrorViewModel']]],
+  ['siteadmin_760',['SiteAdmin',['../class_dashboard_1_1_services_1_1_github_1_1_profile.html#a3ec79a727c369b97433f75e025914066',1,'Dashboard::Services::Github::Profile']]],
+  ['size_761',['Size',['../class_dashboard_1_1_infrastructure_1_1_widget.html#a151cbcf25dc400c6602410a0efbf898c',1,'Dashboard::Infrastructure::Widget']]],
+  ['spice_762',['Spice',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a06cdf2b8d4039e873af58274e41305ea',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['starredurl_763',['StarredUrl',['../class_dashboard_1_1_services_1_1_github_1_1_profile.html#a0fd1d5fe5803888162f292a60174c13a',1,'Dashboard::Services::Github::Profile']]],
+  ['studentyear_764',['Studentyear',['../class_dashboard_1_1_models_1_1_dashboard_1_1_intranet_1_1_notes_1_1_root.html#a2523124bf0f7d5bc7f32ec50699ce7ef',1,'Dashboard::Models::Dashboard::Intranet::Notes::Root']]],
+  ['subscriptionsurl_765',['SubscriptionsUrl',['../class_dashboard_1_1_services_1_1_github_1_1_profile.html#aa1a9c6fab65447e50c0b8aa88bb7cacb',1,'Dashboard::Services::Github::Profile']]]
+];

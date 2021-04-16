@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <partial name="_PageHeadElement"/>
+
+    @RenderSection("Styles", required: false)
+    @RenderSection("HeadScripts", required: false)
+</head>
+<body>
+<partial name="_GoogleTagManagerBodyElement"/>
+
+<partial name="_Sidenav"/>
+<div class="main-content" id="panel">
+    
+    <partial name="Topnav/_TopnavProfile" />
+    
+    <!-- Header -->
+    <div class="header pb-6 d-flex align-items-center" style="min-height: 100px">
+    </div>
+    <!-- / Header -->
+
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+        <!-- Page content -->
+        @RenderBody()
+        <partial name="_Footer"/>
+    </div>
+</div>
+
+<partial name="_ThemeScripts"/>
+
+@RenderSection("Scripts", required: false)
+</body>
+</html>

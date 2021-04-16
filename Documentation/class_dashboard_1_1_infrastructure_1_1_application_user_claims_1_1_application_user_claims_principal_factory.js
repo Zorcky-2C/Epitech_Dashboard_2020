@@ -1,0 +1,5 @@
+var class_dashboard_1_1_infrastructure_1_1_application_user_claims_1_1_application_user_claims_principal_factory =
+[
+    [ "ApplicationUserClaimsPrincipalFactory", "class_dashboard_1_1_infrastructure_1_1_application_user_claims_1_1_application_user_claims_principal_factory.html#a4c3f8953df1c9aac38a5c1eb56528856", null ],
+    [ "CreateAsync", "class_dashboard_1_1_infrastructure_1_1_application_user_claims_1_1_application_user_claims_principal_factory.html#acb3018644e49ef68e3b56ea235a587a2", null ]
+];

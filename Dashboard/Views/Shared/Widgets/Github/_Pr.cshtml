@@ -1,0 +1,49 @@
+﻿@model ProfileViewModel
+
+@using Dashboard.Services.Github
+
+@{Pr widget = new Pr(Model.GithubToken);}
+
+@if (widget.Notifications.Count == 0)
+{
+    <div class="card-body">
+        <span class="mb-0 text-sm">No notificaitons to show!</span>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table align-items-center">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">date</th>
+                    <th scope="col">title</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int counter = 5;
+                    if (widget.Notifications.Count < 5)
+                    {
+                        counter = widget.Notifications.Count;
+                    }
+                }
+                @for (int i = 0; i < counter; i++) 
+                {
+                    <tr>
+                        <th scope="row">
+                            <div class="media-body">
+                                <span class="mb-0 text-sm">@widget.Notifications[i].UpdatedAt.Replace("T", " ").Replace("Z", "")</span>
+                            </div>
+                        </th>
+                        <th scope="row">
+                            <div class="media-body">
+                                <a href="@widget.Notifications[i].Subject.Url.Replace("api.", "").Replace("/repos", "")">@widget.Notifications[i].Subject.Title</a>
+                            </div>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

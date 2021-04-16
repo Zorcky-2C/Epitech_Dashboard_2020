@@ -1,0 +1,7 @@
+﻿@using Dashboard.Services.CatAPI
+
+@{Cat widget = new Cat();}
+    
+<div class="card-body">
+    <img class="card-img-top" src="@widget.getData()[0].Url.ToString()" alt="Card image cap">
+</div>

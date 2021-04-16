@@ -1,0 +1,4 @@
+var namespace_dashboard_1_1_infrastructure_1_1_application_user_claims =
+[
+    [ "ApplicationUserClaimsPrincipalFactory", "class_dashboard_1_1_infrastructure_1_1_application_user_claims_1_1_application_user_claims_principal_factory.html", "class_dashboard_1_1_infrastructure_1_1_application_user_claims_1_1_application_user_claims_principal_factory" ]
+];

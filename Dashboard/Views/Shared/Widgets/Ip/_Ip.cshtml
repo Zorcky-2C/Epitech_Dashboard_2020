@@ -1,0 +1,20 @@
+﻿@using Dashboard.Services.Ip
+
+@{Ip widget = new Ip();}
+    
+<div class="card-body">
+    <span class="font-weight-600 mb-0">IP Address:</span>
+    <span class="font-weight-700 ml-1">@widget.getIpInfo().Ip</span>
+    <br>
+    <span class="font-weight-600 mb-0">City:</span>
+    <span class="font-weight-700 ml-1">@widget.getIpInfo().City</span>
+    <br>
+    <span class="font-weight-600 mb-0">Region:</span>
+    <span class="font-weight-700 ml-1">@widget.getIpInfo().Region</span>
+    <br>
+    <span class="font-weight-600 mb-0">Country:</span>
+    <span class="font-weight-700 ml-1">@widget.getIpInfo().Country</span>
+    <br>
+    <span class="font-weight-600 mb-0">Postal:</span>
+    <span class="font-weight-700 ml-1">@widget.getIpInfo().Postal</span>
+</div>

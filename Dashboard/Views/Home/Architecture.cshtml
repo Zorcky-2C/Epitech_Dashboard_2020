@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Architecture";
+    Layout = "_LayoutProfile";
+}
+
+<div class="row">
+    <div class="col-xl order-xl-1">
+        <div class="card">
+            <div class="card-header">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h3 class="mb-0">Epitech Dashboard Architecture</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Epitech Dashboard is a web application developed with ASP.NET and Bootstrap that allows you to quickly visualize your information according to your subscribed services.</p>
+                <p>You can see the architecture documentation in Documentation folder.</p>
+                <h2 id="prerequisites">Prerequisites</h2>
+                <ul>
+                    <li><a href="https://docs.docker.com/docker-for-windows/install/">Docker</a></li>
+                </ul>
+                <h2 id="installation">Installation</h2>
+                <p>Launch the server locally using docker</p>
+
+                <div id="badge-button-html" class="tab-pane fade active show" role="tabpanel" aria-labelledby="badge-button-html-tab">
+                    <figure class="highlight">
+                        <pre class=" language-html"><code class=" language-html" data-lang="html">docker-compose build && docker-compose up</code></pre>
+                    </figure>
+                </div>
+            
+                <h2 id="usage">Usage</h2>
+                <p>Once the server is launched connect to <a href="http://localhost:8080/">localhost:8080</a></p>
+                <h2 id="services-widgets">Services &amp; Widgets</h2>
+                <h3 id="intranet">Intranet</h3>
+                <p>Allow you to get information about Epitech Intranet</p>
+                <ul>
+                    <li><strong>Notes</strong> -&gt; Display your current GPA and credits</li>
+                    <li><strong>Notifications</strong> -&gt; Display your latest Intranet notifications</li>
+                </ul>
+                <h3 id="github">Github</h3>
+                <p>Allow you to get information about your Github account</p>
+                <ul>
+                    <li><strong>Notification</strong> -&gt; Display your latest Gitbub notifications</li>
+                </ul>
+                <h3 id="ip">IP</h3>
+                <p>Allow you to get information about your public IP address</p>
+                <ul>
+                    <li><strong>Show my infos</strong> -&gt; Display your public IP address, City, Region, country and postal code </li>
+                </ul>
+                <h3 id="catapi">CatAPI</h3>
+                <p>Random cat images</p>
+                <ul>
+                    <li><strong>Cat</strong> -&gt; Display random images of cats</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
